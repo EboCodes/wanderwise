@@ -3,52 +3,51 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog - WanderWise</title>
-  <meta name="description" content="All travel guides, tips and itineraries from WanderWise. USA and Europe travel writing.">
-  <link rel="stylesheet" href="../css/global.css">
-  <link rel="stylesheet" href="../css/blog.css">
+
+  <!-- Primary SEO -->
+  <title>Travel Blog — WanderWise | USA & Europe Guides</title>
+  <meta name="description" content="All travel guides, tips and itineraries from WanderWise. Honest writing about the USA and Europe — search by destination or browse all posts.">
+  <meta name="keywords" content="travel blog, USA travel guides, Europe travel guides, travel tips, itineraries, travel advice">
+  <meta name="author" content="WanderWise">
+  <link rel="canonical" href="https://wanderwiseguide.vercel.app/pages/blog.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="WanderWise">
+  <meta property="og:title" content="Travel Blog — WanderWise | USA & Europe Guides">
+  <meta property="og:description" content="All travel guides, tips and itineraries from WanderWise. Honest writing about the USA and Europe.">
+  <meta property="og:url" content="https://wanderwiseguide.vercel.app/pages/blog.html">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1200&q=85">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Travel Blog — WanderWise | USA & Europe Guides">
+  <meta name="twitter:description" content="All travel guides, tips and itineraries from WanderWise. Honest writing about the USA and Europe.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1200&q=85">
+
+  <!-- Favicon -->
   <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
   <link rel="manifest" href="../site.webmanifest">
+
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/blog.css">
   <style>
-    /* SEARCH BAR */
-    .search-wrap {
-      position: relative;
-      display: flex; align-items: center;
-      flex: 1; max-width: 320px;
-    }
-    .search-icon {
-      position: absolute; left: 0.85rem;
-      color: var(--warm-grey); pointer-events: none;
-      width: 15px; height: 15px;
-    }
-    .search-input {
-      width: 100%;
-      padding: 0.5rem 2.5rem 0.5rem 2.4rem;
-      border: 1px solid var(--border);
-      background: var(--white);
-      font-family: var(--sans); font-size: 0.85rem;
-      color: var(--ink); outline: none;
-      transition: border-color 0.2s;
-    }
-    .search-input:focus { border-color: var(--sienna); }
-    .search-input::placeholder { color: var(--warm-grey); }
-    .search-clear {
-      position: absolute; right: 0.7rem;
-      background: none; border: none; cursor: pointer;
-      color: var(--warm-grey); font-size: 0.8rem;
-      display: none; align-items: center; justify-content: center;
-      padding: 2px; transition: color 0.2s;
-    }
-    .search-clear:hover { color: var(--ink); }
-    .filter-inner {
-      display: flex; align-items: center;
-      gap: 1.2rem; flex-wrap: wrap;
-    }
-    @media (max-width: 600px) {
-      .search-wrap { max-width: 100%; flex: unset; width: 100%; }
-      .filter-inner { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+    .search-wrap { position:relative; display:flex; align-items:center; flex:1; max-width:320px; }
+    .search-icon { position:absolute; left:0.85rem; color:var(--warm-grey); pointer-events:none; width:15px; height:15px; }
+    .search-input { width:100%; padding:0.5rem 2.5rem 0.5rem 2.4rem; border:1px solid var(--border); background:var(--white); font-family:var(--sans); font-size:0.85rem; color:var(--ink); outline:none; transition:border-color 0.2s; }
+    .search-input:focus { border-color:var(--sienna); }
+    .search-input::placeholder { color:var(--warm-grey); }
+    .search-clear { position:absolute; right:0.7rem; background:none; border:none; cursor:pointer; color:var(--warm-grey); font-size:0.8rem; display:none; align-items:center; justify-content:center; padding:2px; transition:color 0.2s; }
+    .search-clear:hover { color:var(--ink); }
+    .filter-inner { display:flex; align-items:center; gap:1.2rem; flex-wrap:wrap; }
+    @media (max-width:600px) {
+      .search-wrap { max-width:100%; flex:unset; width:100%; }
+      .filter-inner { flex-direction:column; align-items:flex-start; gap:0.75rem; }
     }
   </style>
 </head>
@@ -86,13 +85,11 @@
     <section class="filter-bar">
       <div class="container">
         <div class="filter-inner">
-          <!-- Search -->
           <div class="search-wrap">
             <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
             <input type="text" id="search-input" class="search-input" placeholder="Search posts…" oninput="handleSearch(this.value)" aria-label="Search posts">
             <button class="search-clear" id="search-clear" onclick="clearSearch()" aria-label="Clear search">✕</button>
           </div>
-          <!-- Category pills -->
           <div class="filter-pills">
             <button class="filter-pill active" data-cat="all">All posts</button>
             <button class="filter-pill" data-cat="usa">USA Travel</button>
@@ -117,10 +114,7 @@
 
   <footer class="site-footer">
     <div class="footer-grid">
-      <div class="footer-brand">
-        <a href="../index.html" class="nav-logo">Wander<span>Wise</span></a>
-        <p>Honest travel writing for people who'd rather explore than scroll.</p>
-      </div>
+      <div class="footer-brand"><a href="../index.html" class="nav-logo">Wander<span>Wise</span></a><p>Honest travel writing for people who'd rather explore than scroll.</p></div>
       <div class="footer-col"><h4>Destinations</h4><a href="usa.html">USA Travel</a><a href="europe.html">Europe Travel</a><a href="blog.html">All Guides</a></div>
       <div class="footer-col"><h4>Site</h4><a href="about.html">About</a><a href="blog.html">Blog</a><a href="about.html#contact">Contact</a></div>
       <div class="footer-col"><h4>Follow</h4><a href="#">Instagram</a><a href="#">Pinterest</a><a href="#">Twitter/X</a></div>
@@ -130,65 +124,37 @@
 
   <script type="module">
     import '../js/global.js';
-
-    let allPosts  = [];
-    let activeCat = 'all';
-    let searchVal = '';
-
+    let allPosts = [], activeCat = 'all', searchVal = '';
     async function init() {
       await WW.seedIfEmpty();
       allPosts = await WW.getPosts();
       render();
     }
-
     function render() {
-      const grid   = document.getElementById('blog-posts');
+      const grid = document.getElementById('blog-posts');
       const noPost = document.getElementById('no-posts');
-      const noMsg  = document.getElementById('no-posts-msg');
-
+      const noMsg = document.getElementById('no-posts-msg');
       let posts = activeCat === 'all' ? allPosts : allPosts.filter(p => p.category === activeCat);
-
       if (searchVal.trim()) {
         const q = searchVal.toLowerCase();
-        posts = posts.filter(p =>
-          p.title.toLowerCase().includes(q) ||
-          (p.excerpt || '').toLowerCase().includes(q) ||
-          (p.content || '').toLowerCase().includes(q)
-        );
+        posts = posts.filter(p => p.title.toLowerCase().includes(q) || (p.excerpt||'').toLowerCase().includes(q) || (p.content||'').toLowerCase().includes(q));
       }
-
       if (!posts.length) {
         grid.innerHTML = '';
         noMsg.textContent = searchVal.trim() ? 'No posts match your search.' : 'No posts in this category yet.';
-        noPost.style.display = 'block';
-        return;
+        noPost.style.display = 'block'; return;
       }
       noPost.style.display = 'none';
       grid.innerHTML = posts.map(p => `<div>${WW.renderCard(p)}</div>`).join('');
     }
-
     document.querySelectorAll('.filter-pill').forEach(btn => {
       btn.addEventListener('click', function () {
         document.querySelectorAll('.filter-pill').forEach(b => b.classList.remove('active'));
-        this.classList.add('active');
-        activeCat = this.dataset.cat;
-        render();
+        this.classList.add('active'); activeCat = this.dataset.cat; render();
       });
     });
-
-    window.handleSearch = (val) => {
-      searchVal = val;
-      document.getElementById('search-clear').style.display = val ? 'flex' : 'none';
-      render();
-    };
-
-    window.clearSearch = () => {
-      searchVal = '';
-      document.getElementById('search-input').value = '';
-      document.getElementById('search-clear').style.display = 'none';
-      render();
-    };
-
+    window.handleSearch = (val) => { searchVal = val; document.getElementById('search-clear').style.display = val ? 'flex' : 'none'; render(); };
+    window.clearSearch = () => { searchVal = ''; document.getElementById('search-input').value = ''; document.getElementById('search-clear').style.display = 'none'; render(); };
     init();
   </script>
 </body>

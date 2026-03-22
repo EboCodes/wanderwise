@@ -3,14 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About - WanderWise</title>
+
+  <!-- Primary SEO -->
+  <title>About WanderWise — Honest Travel Writing for USA & Europe</title>
   <meta name="description" content="WanderWise is a travel guide built on first-hand experience. No sponsored content, no affiliate filler — just honest writing about real trips.">
-  <link rel="stylesheet" href="../css/global.css">
-  <link rel="stylesheet" href="../css/about.css">
+  <meta name="keywords" content="about WanderWise, travel blog, honest travel guides, USA Europe travel">
+  <meta name="author" content="WanderWise">
+  <link rel="canonical" href="https://wanderwiseguide.vercel.app/pages/about.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="WanderWise">
+  <meta property="og:title" content="About WanderWise — Honest Travel Writing">
+  <meta property="og:description" content="No sponsored content, no affiliate filler — just honest writing about real trips to the USA and Europe.">
+  <meta property="og:url" content="https://wanderwiseguide.vercel.app/pages/about.html">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1452421822248-d4c2b47f0c81?w=1200&q=85">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About WanderWise — Honest Travel Writing">
+  <meta name="twitter:description" content="No sponsored content, no affiliate filler — just honest writing about real trips to the USA and Europe.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1452421822248-d4c2b47f0c81?w=1200&q=85">
+
+  <!-- Favicon -->
   <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
   <link rel="manifest" href="../site.webmanifest">
+
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/about.css">
 </head>
 <body>
   <nav class="site-nav">
@@ -103,7 +128,6 @@
 
   <script type="module">
     import '../js/global.js';
-
     window.handleContact = (e) => {
       e.preventDefault();
       document.getElementById('cf-submit').textContent = 'Sent ✓';

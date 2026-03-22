@@ -4,14 +4,56 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WanderWise - Travel Guides for USA & Europe</title>
+
+  <!-- Primary SEO -->
+  <title>WanderWise — Honest Travel Guides for USA & Europe</title>
   <meta name="description" content="Honest travel guides, practical itineraries and tips for exploring the United States and Europe. Written by travellers, for travellers.">
-  <link rel="stylesheet" href="css/global.css">
-  <link rel="stylesheet" href="css/style.css">
+  <meta name="keywords" content="travel guides, USA travel, Europe travel, travel tips, itineraries, road trips, national parks">
+  <meta name="author" content="WanderWise">
+  <link rel="canonical" href="https://wanderwiseguide.vercel.app/index.html">
+
+  <!-- Open Graph (WhatsApp, Facebook, LinkedIn) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="WanderWise">
+  <meta property="og:title" content="WanderWise — Honest Travel Guides for USA & Europe">
+  <meta property="og:description" content="Real guides from real trips. We cover the places worth going, the things worth doing, and the mistakes worth skipping.">
+  <meta property="og:url" content="https://wanderwiseguide.vercel.app/">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1200&q=85">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="WanderWise — Honest Travel Guides for USA & Europe">
+  <meta name="twitter:description" content="Real guides from real trips. We cover the places worth going, the things worth doing, and the mistakes worth skipping.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1200&q=85">
+
+  <!-- Favicon -->
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
   <link rel="manifest" href="site.webmanifest">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "WanderWise",
+    "url": "https://wanderwiseguide.vercel.app",
+    "description": "Honest travel guides for the USA and Europe",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://wanderwiseguide.vercel.app/pages/blog.html?search={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
 </head>
 
 <body>

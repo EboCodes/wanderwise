@@ -3,14 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>USA Travel Guides - WanderWise</title>
-  <meta name="description" content="Practical travel guides for exploring the United States — national parks, cities, road trips and hidden gems.">
-  <link rel="stylesheet" href="../css/global.css">
-  <link rel="stylesheet" href="../css/dest.css">
+
+  <!-- Primary SEO -->
+  <title>USA Travel Guides — WanderWise | National Parks, Cities & Road Trips</title>
+  <meta name="description" content="Practical travel guides for exploring the United States — national parks, city breaks, iconic road trips and hidden gems from coast to coast.">
+  <meta name="keywords" content="USA travel guides, America travel, national parks, road trips, New York, Grand Canyon, California, travel tips USA">
+  <meta name="author" content="WanderWise">
+  <link rel="canonical" href="https://wanderwiseguide.vercel.app/pages/usa.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="WanderWise">
+  <meta property="og:title" content="USA Travel Guides — National Parks, Cities & Road Trips">
+  <meta property="og:description" content="Practical travel guides for exploring the United States — national parks, city breaks, iconic road trips and hidden gems from coast to coast.">
+  <meta property="og:url" content="https://wanderwiseguide.vercel.app/pages/usa.html">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=1200&q=85">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="USA Travel Guides — National Parks, Cities & Road Trips">
+  <meta name="twitter:description" content="Practical travel guides for exploring the United States — national parks, city breaks, iconic road trips and hidden gems.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=1200&q=85">
+
+  <!-- Favicon -->
   <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
   <link rel="manifest" href="../site.webmanifest">
+
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/dest.css">
 </head>
 <body>
   <nav class="site-nav">
@@ -56,10 +81,10 @@
         <p class="section-label">Regions & highlights</p>
         <h2 style="margin-top:0.75rem;margin-bottom:3rem;">Where in the States?</h2>
         <div class="regions-grid">
-          <div class="region-card"><img src="https://images.unsplash.com/photo-1534430480872-3498386e7856?w=700&q=80" alt="New York City" loading="lazy"><div class="region-body"><h3>East Coast</h3><p>New York, Boston, Washington D.C., and the scenic drive up through New England in autumn.</p></div></div>
-          <div class="region-card"><img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=700&q=80" alt="Monument Valley, Southwest" loading="lazy"><div class="region-body"><h3>The Southwest</h3><p>Grand Canyon, Zion, Monument Valley, Joshua Tree. The landscape that makes you pull over every ten miles.</p></div></div>
-          <div class="region-card"><img src="https://images.unsplash.com/photo-1501163108541-ed22d1e5658b?w=700&q=80" alt="Pacific Coast Highway" loading="lazy"><div class="region-body"><h3>West Coast</h3><p>Highway 1, San Francisco, Portland, Seattle, and the national forests that most visitors never reach.</p></div></div>
-          <div class="region-card"><img src="https://images.unsplash.com/photo-1543158181-e6f9f6712055?w=700&q=80" alt="Southern USA" loading="lazy"><div class="region-body"><h3>The South</h3><p>New Orleans, Nashville, the Blue Ridge Parkway, and a food culture that deserves its own trip entirely.</p></div></div>
+          <div class="region-card"><img src="https://images.unsplash.com/photo-1534430480872-3498386e7856?w=700&q=80" alt="New York City skyline" loading="lazy"><div class="region-body"><h3>East Coast</h3><p>New York, Boston, Washington D.C., and the scenic drive up through New England in autumn.</p></div></div>
+          <div class="region-card"><img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=700&q=80" alt="Monument Valley, Southwest USA" loading="lazy"><div class="region-body"><h3>The Southwest</h3><p>Grand Canyon, Zion, Monument Valley, Joshua Tree. The landscape that makes you pull over every ten miles.</p></div></div>
+          <div class="region-card"><img src="https://images.unsplash.com/photo-1501163108541-ed22d1e5658b?w=700&q=80" alt="Pacific Coast Highway California" loading="lazy"><div class="region-body"><h3>West Coast</h3><p>Highway 1, San Francisco, Portland, Seattle, and the national forests that most visitors never reach.</p></div></div>
+          <div class="region-card"><img src="https://images.unsplash.com/photo-1543158181-e6f9f6712055?w=700&q=80" alt="Southern USA New Orleans" loading="lazy"><div class="region-body"><h3>The South</h3><p>New Orleans, Nashville, the Blue Ridge Parkway, and a food culture that deserves its own trip entirely.</p></div></div>
         </div>
       </div>
     </section>
@@ -109,12 +134,9 @@
   <script type="module">
     import '../js/global.js';
     async function init() {
-      const grid  = document.getElementById('usa-posts');
+      const grid = document.getElementById('usa-posts');
       const posts = await WW.getPosts('usa');
-      if (!posts.length) {
-        grid.innerHTML = '<p style="font-family:var(--sans);color:var(--warm-grey);font-size:0.9rem;grid-column:1/-1;">No USA posts yet. Check back soon.</p>';
-        return;
-      }
+      if (!posts.length) { grid.innerHTML = '<p style="font-family:var(--sans);color:var(--warm-grey);font-size:0.9rem;grid-column:1/-1;">No USA posts yet. Check back soon.</p>'; return; }
       grid.innerHTML = posts.map(p => `<div>${WW.renderCard(p)}</div>`).join('');
     }
     init();

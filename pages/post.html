@@ -3,13 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Post - WanderWise</title>
-  <link rel="stylesheet" href="../css/global.css">
-  <link rel="stylesheet" href="../css/post.css">
+
+  <!-- Base SEO — updated dynamically by JS when post loads -->
+  <title>WanderWise — Travel Guide</title>
+  <meta name="description" content="Honest travel guides for the USA and Europe from WanderWise.">
+  <meta name="author" content="WanderWise">
+
+  <!-- Open Graph — updated dynamically -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="WanderWise">
+  <meta property="og:title" content="WanderWise — Travel Guide">
+  <meta property="og:description" content="Honest travel guides for the USA and Europe from WanderWise.">
+  <meta property="og:url" content="https://wanderwiseguide.vercel.app/pages/post.html">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1200&q=85">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- Twitter Card — updated dynamically -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="WanderWise — Travel Guide">
+  <meta name="twitter:description" content="Honest travel guides for the USA and Europe from WanderWise.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1200&q=85">
+
+  <!-- Favicon -->
   <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
   <link rel="manifest" href="../site.webmanifest">
+
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/post.css">
 </head>
 <body>
   <nav class="site-nav">
@@ -50,26 +73,57 @@
   <script type="module">
     import '../js/global.js';
 
+    function setMeta(name, content) {
+      let el = document.querySelector(`meta[name="${name}"]`) || document.querySelector(`meta[property="${name}"]`);
+      if (el) el.setAttribute('content', content);
+    }
+
     async function init() {
       const params = new URLSearchParams(location.search);
       const id     = params.get('id');
       const main   = document.getElementById('post-main');
 
-      if (!id) {
-        main.innerHTML = '<div class="container" style="padding:8rem 5vw;"><p>Post not found.</p></div>';
-        return;
-      }
+      if (!id) { main.innerHTML = '<div class="container" style="padding:8rem 5vw;"><p>Post not found.</p></div>'; return; }
 
       const post = await WW.getPost(id);
 
-      if (!post) {
-        main.innerHTML = '<div class="container" style="padding:8rem 5vw;"><p>Post not found. <a href="blog.html">Back to blog</a></p></div>';
-        return;
-      }
+      if (!post) { main.innerHTML = '<div class="container" style="padding:8rem 5vw;"><p>Post not found. <a href="blog.html">Back to blog</a></p></div>'; return; }
 
-      const cat = post.category === 'usa' ? 'USA Travel' : post.category === 'europe' ? 'Europe Travel' : 'Travel Tips';
-      const img = post.image || 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1400&q=85';
+      const cat     = post.category === 'usa' ? 'USA Travel' : post.category === 'europe' ? 'Europe Travel' : 'Travel Tips';
+      const img     = post.image || 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1400&q=85';
+      const excerpt = post.excerpt || WW.excerpt(post.content, 155);
+      const url     = `https://wanderwiseguide.vercel.app/pages/post.html?id=${post.id}`;
+
+      // Update page title and meta tags dynamically
       document.title = post.title + ' — WanderWise';
+      setMeta('description', excerpt);
+      setMeta('og:title', post.title + ' — WanderWise');
+      setMeta('og:description', excerpt);
+      setMeta('og:url', url);
+      setMeta('og:image', img);
+      setMeta('twitter:title', post.title + ' — WanderWise');
+      setMeta('twitter:description', excerpt);
+      setMeta('twitter:image', img);
+
+      // Add canonical link
+      let canonical = document.querySelector('link[rel="canonical"]');
+      if (!canonical) { canonical = document.createElement('link'); canonical.rel = 'canonical'; document.head.appendChild(canonical); }
+      canonical.href = url;
+
+      // Add Article structured data
+      const schema = document.createElement('script');
+      schema.type = 'application/ld+json';
+      schema.textContent = JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": post.title,
+        "description": excerpt,
+        "image": img,
+        "datePublished": post.date,
+        "author": { "@type": "Organization", "name": "WanderWise" },
+        "publisher": { "@type": "Organization", "name": "WanderWise", "url": "https://wanderwiseguide.vercel.app" }
+      });
+      document.head.appendChild(schema);
 
       main.innerHTML = `
         <section class="post-hero" style="background-image:url('${img}')">

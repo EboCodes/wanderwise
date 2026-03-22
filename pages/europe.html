@@ -3,14 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Europe Travel Guides - WanderWise</title>
-  <meta name="description" content="Practical travel guides for exploring Europe — city breaks, rail routes, village escapes and the places most tourists miss.">
-  <link rel="stylesheet" href="../css/global.css">
-  <link rel="stylesheet" href="../css/dest.css">
+
+  <!-- Primary SEO -->
+  <title>Europe Travel Guides — WanderWise | City Breaks, Rail Routes & More</title>
+  <meta name="description" content="Practical travel guides for exploring Europe — city breaks, rail routes, village escapes and the places most tourists miss. France, Italy, Spain, Portugal and beyond.">
+  <meta name="keywords" content="Europe travel guides, European travel, city breaks, rail travel Europe, Paris, Italy, Spain, Portugal, Scandinavia, travel tips Europe">
+  <meta name="author" content="WanderWise">
+  <link rel="canonical" href="https://wanderwiseguide.vercel.app/pages/europe.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="WanderWise">
+  <meta property="og:title" content="Europe Travel Guides — City Breaks, Rail Routes & Hidden Gems">
+  <meta property="og:description" content="Practical travel guides for exploring Europe — city breaks, rail routes, village escapes and the places most tourists miss.">
+  <meta property="og:url" content="https://wanderwiseguide.vercel.app/pages/europe.html">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=1200&q=85">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Europe Travel Guides — City Breaks, Rail Routes & Hidden Gems">
+  <meta name="twitter:description" content="Practical travel guides for exploring Europe — city breaks, rail routes, village escapes and the places most tourists miss.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=1200&q=85">
+
+  <!-- Favicon -->
   <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
   <link rel="manifest" href="../site.webmanifest">
+
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/dest.css">
 </head>
 <body>
   <nav class="site-nav">
@@ -37,7 +62,7 @@
   <main>
     <section class="dest-hero dest-hero--europe">
       <div class="dest-hero-bg">
-        <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=1600&q=85" alt="European cityscape" loading="eager">
+        <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=1600&q=85" alt="European cityscape at dusk" loading="eager">
         <div class="dest-hero-overlay"></div>
       </div>
       <div class="dest-hero-content container">
@@ -56,10 +81,10 @@
         <p class="section-label">Regions & highlights</p>
         <h2 style="margin-top:0.75rem;margin-bottom:3rem;">Which part of Europe?</h2>
         <div class="regions-grid">
-          <div class="region-card"><img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=700&q=80" alt="Paris, France" loading="lazy"><div class="region-body"><h3>Western Europe</h3><p>France, Spain, Portugal, the Netherlands. The classic circuit, done properly and without the clichés.</p></div></div>
-          <div class="region-card"><img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=700&q=80" alt="Tuscany, Italy" loading="lazy"><div class="region-body"><h3>Mediterranean</h3><p>Italy, Greece, Croatia, southern Spain. The light, the food, the way time slows down by the water.</p></div></div>
-          <div class="region-card"><img src="https://images.unsplash.com/photo-1543158181-e6f9f6712055?w=700&q=80" alt="Central Europe" loading="lazy"><div class="region-body"><h3>Central Europe</h3><p>Prague, Vienna, Budapest, Kraków. Four of the most underrated city-break destinations on the continent.</p></div></div>
-          <div class="region-card"><img src="https://images.unsplash.com/photo-1513407030348-c983a97b98d8?w=700&q=80" alt="Scandinavia" loading="lazy"><div class="region-body"><h3>Scandinavia</h3><p>Norway, Sweden, Denmark, Iceland. Worth every extra mile of planning. And every króna.</p></div></div>
+          <div class="region-card"><img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=700&q=80" alt="Paris France Eiffel Tower" loading="lazy"><div class="region-body"><h3>Western Europe</h3><p>France, Spain, Portugal, the Netherlands. The classic circuit, done properly and without the clichés.</p></div></div>
+          <div class="region-card"><img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=700&q=80" alt="Tuscany Italy countryside" loading="lazy"><div class="region-body"><h3>Mediterranean</h3><p>Italy, Greece, Croatia, southern Spain. The light, the food, the way time slows down by the water.</p></div></div>
+          <div class="region-card"><img src="https://images.unsplash.com/photo-1543158181-e6f9f6712055?w=700&q=80" alt="Prague Central Europe" loading="lazy"><div class="region-body"><h3>Central Europe</h3><p>Prague, Vienna, Budapest, Kraków. Four of the most underrated city-break destinations on the continent.</p></div></div>
+          <div class="region-card"><img src="https://images.unsplash.com/photo-1513407030348-c983a97b98d8?w=700&q=80" alt="Scandinavia Norway fjords" loading="lazy"><div class="region-body"><h3>Scandinavia</h3><p>Norway, Sweden, Denmark, Iceland. Worth every extra mile of planning. And every króna.</p></div></div>
         </div>
       </div>
     </section>
@@ -109,12 +134,9 @@
   <script type="module">
     import '../js/global.js';
     async function init() {
-      const grid  = document.getElementById('europe-posts');
+      const grid = document.getElementById('europe-posts');
       const posts = await WW.getPosts('europe');
-      if (!posts.length) {
-        grid.innerHTML = '<p style="font-family:var(--sans);color:var(--warm-grey);font-size:0.9rem;grid-column:1/-1;">No Europe posts yet. Check back soon.</p>';
-        return;
-      }
+      if (!posts.length) { grid.innerHTML = '<p style="font-family:var(--sans);color:var(--warm-grey);font-size:0.9rem;grid-column:1/-1;">No Europe posts yet. Check back soon.</p>'; return; }
       grid.innerHTML = posts.map(p => `<div>${WW.renderCard(p)}</div>`).join('');
     }
     init();
