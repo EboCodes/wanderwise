@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - WanderWise</title>
+  <meta name="description" content="WanderWise is a travel guide built on first-hand experience. No sponsored content, no affiliate filler — just honest writing about real trips.">
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/about.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+  <link rel="manifest" href="../site.webmanifest">
+</head>
+<body>
+  <nav class="site-nav">
+    <a href="../index.html" class="nav-logo">Wander<span>Wise</span></a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="usa.html">USA</a></li>
+      <li><a href="europe.html">Europe</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <button class="nav-burger" id="nav-burger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="nav-drawer" id="nav-drawer">
+    <a href="../index.html">Home</a>
+    <a href="usa.html">USA Travel</a>
+    <a href="europe.html">Europe Travel</a>
+    <a href="blog.html">Blog</a>
+    <a href="about.html">About</a>
+  </div>
+
+  <main>
+    <section class="about-hero">
+      <div class="container">
+        <p class="section-label">About this site</p>
+        <h1>Travel writing<br>done the<br><em>slow way.</em></h1>
+      </div>
+      <div class="about-hero-img">
+        <img src="https://images.unsplash.com/photo-1452421822248-d4c2b47f0c81?w=1000&q=80" alt="Traveller with journal" loading="eager">
+      </div>
+    </section>
+
+    <section class="about-story">
+      <div class="container">
+        <div class="about-story-inner">
+          <div class="about-story-text">
+            <p class="section-label">The story</p>
+            <h2 style="margin-top:0.75rem;">Why WanderWise exists</h2>
+            <p>WanderWise started because travel guides weren't honest enough. Too many "top 10 lists" full of places the writer had never actually visited. Too many itineraries that assumed you had no budget constraints, no travel anxiety, and infinite flexibility.</p>
+            <p>Every guide on this site comes from time actually spent in that place - staying long enough to find the second-best restaurant, the walk that isn't on any map, the thing that goes wrong and the thing that goes unexpectedly right.</p>
+            <p>We cover the USA and Europe because that's where we've spent the most time. We'd rather do that well than write superficially about everywhere.</p>
+          </div>
+          <div class="about-story-sidebar">
+            <div class="about-values">
+              <div class="value-item"><span class="value-num">01</span><div><h4>First-hand only</h4><p>We don't write about places we haven't been to. That's the whole policy.</p></div></div>
+              <div class="value-item"><span class="value-num">02</span><div><h4>No sponsored content</h4><p>No hotels pay for coverage. No tourism boards underwrite the guides.</p></div></div>
+              <div class="value-item"><span class="value-num">03</span><div><h4>Practical, not aspirational</h4><p>The goal is to help you plan a real trip, not to make you feel bad about the one you can afford.</p></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-divider-img">
+      <img src="https://images.unsplash.com/photo-1500835556837-99ac94a94552?w=1600&q=80" alt="Open road" loading="lazy">
+      <div class="about-divider-caption">Somewhere between Utah and Nevada, 2023.</div>
+    </section>
+
+    <section class="about-contact" id="contact">
+      <div class="container">
+        <div class="about-contact-inner">
+          <div>
+            <p class="section-label">Get in touch</p>
+            <h2 style="margin-top:0.75rem;">Say hello</h2>
+            <p>Corrections, tips, questions, or just want to recommend somewhere we should go next - we read every message.</p>
+          </div>
+          <form class="contact-form" onsubmit="handleContact(event)">
+            <div class="form-field"><label for="cf-name">Name</label><input type="text" id="cf-name" placeholder="Your name" required></div>
+            <div class="form-field"><label for="cf-email">Email</label><input type="email" id="cf-email" placeholder="your@email.com" required></div>
+            <div class="form-field"><label for="cf-msg">Message</label><textarea id="cf-msg" rows="5" placeholder="What's on your mind?" required></textarea></div>
+            <button type="submit" class="btn btn-filled" id="cf-submit">Send message <span class="arr">→</span></button>
+            <p id="cf-thanks" style="display:none;font-family:var(--sans);color:var(--forest);margin-top:1rem;font-size:0.9rem;">Thanks — we'll be in touch.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand"><a href="../index.html" class="nav-logo">Wander<span>Wise</span></a><p>Honest travel writing for people who'd rather explore than scroll.</p></div>
+      <div class="footer-col"><h4>Destinations</h4><a href="usa.html">USA Travel</a><a href="europe.html">Europe Travel</a><a href="blog.html">All Guides</a></div>
+      <div class="footer-col"><h4>Site</h4><a href="about.html">About</a><a href="blog.html">Blog</a><a href="about.html#contact">Contact</a></div>
+      <div class="footer-col"><h4>Follow</h4><a href="#">Instagram</a><a href="#">Pinterest</a><a href="#">Twitter/X</a></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 WanderWise.</span><span>Ebocodes.</span></div>
+  </footer>
+
+  <script type="module">
+    import '../js/global.js';
+
+    window.handleContact = (e) => {
+      e.preventDefault();
+      document.getElementById('cf-submit').textContent = 'Sent ✓';
+      document.getElementById('cf-submit').disabled = true;
+      document.getElementById('cf-thanks').style.display = 'block';
+    };
+  </script>
+</body>
+</html>

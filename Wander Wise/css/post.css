@@ -1,0 +1,47 @@
+/* post.css */
+.post-loading { padding: 10rem 5vw; font-family: var(--sans); color: var(--warm-grey); text-align: center; }
+
+.post-hero {
+  min-height: 60vh; background-size: cover; background-position: center;
+  display: flex; align-items: flex-end; padding-bottom: 5rem;
+  position: relative; overflow: hidden;
+  padding-top: var(--nav-h);
+}
+.post-hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(28,28,28,0.92) 0%, rgba(28,28,28,0.45) 60%, rgba(28,28,28,0.2) 100%);
+}
+.post-hero-content { position: relative; z-index: 1; max-width: 760px; }
+.post-back {
+  display: inline-block; font-family: var(--sans); font-size: 0.78rem;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: rgba(244,239,230,0.6); margin-bottom: 1.5rem;
+  transition: color 0.2s;
+}
+.post-back:hover { color: var(--white); }
+.post-meta-top {
+  display: flex; align-items: center; gap: 0.75rem;
+  font-family: var(--sans); font-size: 0.75rem;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: rgba(244,239,230,0.6); margin-bottom: 1rem;
+}
+.post-cat { color: #e8c27a; }
+.post-hero-content h1 { color: var(--white); margin-bottom: 1rem; font-size: clamp(1.8rem, 4vw, 3rem); }
+.post-excerpt { color: rgba(244,239,230,0.75); font-size: 1.05rem; font-weight: 300; }
+
+.post-body { padding: 5rem 5vw 6rem; }
+.post-body-inner {
+  max-width: 680px; margin: 0 auto;
+  font-size: 1.08rem; line-height: 1.85; color: var(--ink);
+}
+.post-body-inner p { margin-bottom: 1.6rem; }
+.post-body-inner h2 { font-size: 1.5rem; margin: 2.5rem 0 0.75rem; }
+.post-body-inner h3 { font-size: 1.2rem; margin: 2rem 0 0.6rem; }
+.post-body-inner strong { font-weight: 600; }
+.post-body-inner em { font-style: italic; }
+.post-body-inner blockquote {
+  border-left: 3px solid var(--sienna); margin: 2rem 0;
+  padding: 0.5rem 0 0.5rem 1.5rem;
+  font-style: italic; color: var(--warm-grey);
+}
+.post-footer { max-width: 680px; margin: 3rem auto 0; padding-top: 2.5rem; border-top: 1px solid var(--border); }
