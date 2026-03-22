@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WanderWise - Travel Guides for USA & Europe</title>
+  <meta name="description" content="Honest travel guides, practical itineraries and tips for exploring the United States and Europe. Written by travellers, for travellers.">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="manifest" href="site.webmanifest">
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="site-nav" role="navigation" aria-label="Main navigation">
+    <a href="index.html" class="nav-logo">Wander<span>Wise</span></a>
+    <ul class="nav-links" role="list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="pages/usa.html">USA</a></li>
+      <li><a href="pages/europe.html">Europe</a></li>
+      <li><a href="pages/blog.html">Blog</a></li>
+      <li><a href="pages/about.html">About</a></li>
+    </ul>
+    <button class="nav-burger" id="nav-burger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="nav-drawer" id="nav-drawer" role="navigation" aria-label="Mobile navigation">
+    <a href="index.html">Home</a>
+    <a href="pages/usa.html">USA Travel</a>
+    <a href="pages/europe.html">Europe Travel</a>
+    <a href="pages/blog.html">Blog</a>
+    <a href="pages/about.html">About</a>
+  </div>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" aria-label="Hero">
+      <div class="hero-bg" aria-hidden="true">
+        <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1600&q=85" alt="Aerial view of road through landscape" class="hero-img">
+        <div class="hero-overlay"></div>
+      </div>
+      <div class="hero-content container">
+        <div class="hero-text">
+          <p class="section-label" style="color:rgba(244,239,230,0.7);">Est. 2026 &nbsp;·&nbsp; USA &amp; Europe</p>
+          <h1>Travel with<br><em>intention.</em></h1>
+          <p class="hero-sub">Real guides from real trips. We cover the places worth going, the things worth doing, and the mistakes worth skipping.</p>
+          <div class="hero-ctas">
+            <a href="pages/usa.html" class="btn btn-filled">Explore USA <span class="arr">→</span></a>
+            <a href="pages/europe.html" class="btn btn-light">Explore Europe <span class="arr">→</span></a>
+          </div>
+        </div>
+      </div>
+      <div class="hero-scroll" aria-hidden="true"><span></span></div>
+    </section>
+
+    <!-- INTRO STRIP -->
+    <section class="intro-strip">
+      <div class="container">
+        <div class="intro-strip-inner">
+          <div class="intro-stat">
+            <span class="stat-num">48</span>
+            <span class="stat-label">Destinations</span>
+          </div>
+          <div class="intro-divider"></div>
+          <div class="intro-stat">
+            <span class="stat-num">120+</span>
+            <span class="stat-label">Travel Tips</span>
+          </div>
+          <div class="intro-divider"></div>
+          <div class="intro-stat">
+            <span class="stat-num">2</span>
+            <span class="stat-label">Continents</span>
+          </div>
+          <div class="intro-divider"></div>
+          <p class="intro-tagline">We don't write about places we haven't been. Every guide is built from first-hand time on the ground - the right kind of research.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED DESTINATIONS -->
+    <section class="destinations-section">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-label">Where to go</p>
+          <h2>Two continents.<br>Endless roads.</h2>
+        </div>
+        <div class="dest-grid">
+          <a href="pages/usa.html" class="dest-card dest-usa">
+            <div class="dest-img-wrap">
+              <img src="https://images.unsplash.com/photo-1485738422979-f5c462d49f74?w=900&q=80" alt="Grand Canyon, USA" loading="lazy">
+              <div class="dest-overlay"></div>
+            </div>
+            <div class="dest-body">
+              <p class="dest-eyebrow">North America</p>
+              <h3>United States</h3>
+              <p>Coast-to-coast guides, national park itineraries, city breaks and hidden highways through the American interior.</p>
+              <span class="dest-link btn btn-light">Read guides <span class="arr">→</span></span>
+            </div>
+          </a>
+          <a href="pages/europe.html" class="dest-card dest-europe">
+            <div class="dest-img-wrap">
+              <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=900&q=80" alt="Paris, Europe" loading="lazy">
+              <div class="dest-overlay"></div>
+            </div>
+            <div class="dest-body">
+              <p class="dest-eyebrow">Europe</p>
+              <h3>The Old World</h3>
+              <p>City-by-city breakdowns, rail routes, village detours and the places most travellers walk straight past.</p>
+              <span class="dest-link btn btn-light">Read guides <span class="arr">→</span></span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- LATEST POSTS -->
+    <section class="posts-section">
+      <div class="container">
+        <div class="posts-header">
+          <div>
+            <p class="section-label">From the journal</p>
+            <h2>Latest dispatches</h2>
+          </div>
+          <a href="pages/blog.html" class="btn btn-outline">All posts <span class="arr">→</span></a>
+        </div>
+        <div class="posts-grid" id="home-posts">
+          <div class="posts-loading">Loading posts…</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PULL QUOTE -->
+    <section class="quote-section">
+      <div class="container">
+        <div class="ornament">✦ ✦ ✦</div>
+        <blockquote class="pull-quote">
+          <p>"Not all those who wander are lost - but a decent itinerary does help."</p>
+          <cite>- The WanderWise motto</cite>
+        </blockquote>
+        <div class="ornament">✦ ✦ ✦</div>
+      </div>
+    </section>
+
+    <!-- TIPS PREVIEW -->
+    <section class="tips-section">
+      <div class="container">
+        <div class="tips-inner">
+          <div class="tips-text">
+            <p class="section-label">Practical advice</p>
+            <h2>Things we wish we'd known earlier</h2>
+            <p>The guides that save you time, money and the specific frustration of discovering something the hard way at the worst possible moment.</p>
+            <a href="pages/blog.html" class="btn btn-outline" style="margin-top:1.5rem">Browse all tips <span class="arr">→</span></a>
+          </div>
+          <div class="tips-list">
+            <div class="tip-item"><span class="tip-num">01</span><div><h4>Book trains in Europe at least 3 weeks out</h4><p>Advance fares on Eurostar and Trenitalia can be 60-70% cheaper than walk-up prices.</p></div></div>
+            <div class="tip-item"><span class="tip-num">02</span><div><h4>US National Parks: go mid-week, arrive early</h4><p>The famous spots are genuinely different at 7am before the tour buses arrive. Worth the alarm.</p></div></div>
+            <div class="tip-item"><span class="tip-num">03</span><div><h4>Carry a physical backup of key bookings</h4><p>Hotel vouchers, train reservations, car rental numbers. One dead phone derails more trips than bad weather.</p></div></div>
+            <div class="tip-item"><span class="tip-num">04</span><div><h4>Learn ten words of the local language</h4><p>Hello, thank you, please, excuse me, and do you have a table. Opens more doors than a pocket phrasebook ever will.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section class="newsletter-section">
+      <div class="container">
+        <div class="newsletter-inner">
+          <div class="newsletter-text">
+            <p class="section-label" style="color:rgba(244,239,230,0.6);">Stay in the loop</p>
+            <h2>New guides, straight to you</h2>
+            <p>No noise. Just new posts when they go up, and the occasional tip that didn't make it into a full guide.</p>
+          </div>
+          <form class="newsletter-form" onsubmit="handleSubscribe(event)">
+            <div class="newsletter-field">
+              <input type="email" placeholder="your@email.com" required aria-label="Email address">
+              <button type="submit" class="btn btn-filled">Subscribe</button>
+            </div>
+            <p class="newsletter-small">No spam. Unsubscribe any time.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo">Wander<span>Wise</span></a>
+        <p>Honest travel writing for people who'd rather explore than scroll. Based everywhere, at home nowhere in particular.</p>
+      </div>
+      <div class="footer-col"><h4>Destinations</h4><a href="pages/usa.html">USA Travel</a><a href="pages/europe.html">Europe Travel</a><a href="pages/blog.html">All Guides</a></div>
+      <div class="footer-col"><h4>Site</h4><a href="pages/about.html">About</a><a href="pages/blog.html">Blog</a><a href="pages/about.html#contact">Contact</a></div>
+      <div class="footer-col"><h4>Follow</h4><a href="#">Instagram</a><a href="#">Pinterest</a><a href="#">Twitter/X</a></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 WanderWise. All rights reserved.</span>
+      <span>Ebocodes.</span>
+    </div>
+  </footer>
+
+  <script type="module">
+    import '/js/global.js';
+
+    async function init() {
+      const grid = document.getElementById('home-posts');
+      await WW.seedIfEmpty();
+      const posts = await WW.getPosts();
+      const latest = posts.slice(0, 3);
+      if (!latest.length) {
+        grid.innerHTML = '<p style="color:var(--warm-grey);font-family:var(--sans);font-size:0.9rem;">No posts yet. Check back soon.</p>';
+        return;
+      }
+      grid.innerHTML = latest.map((p, i) =>
+        `<div class="home-post-card${i === 0 ? ' home-post-featured' : ''}">${WW.renderCard(p)}</div>`
+      ).join('');
+    }
+    init();
+
+    window.handleSubscribe = (e) => {
+      e.preventDefault();
+      const btn = e.target.querySelector('button');
+      btn.textContent = 'Subscribed ✓';
+      btn.disabled = true;
+      e.target.querySelector('input').value = '';
+    };
+  </script>
+</body>
+</html>

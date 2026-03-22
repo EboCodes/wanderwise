@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog - WanderWise</title>
+  <meta name="description" content="All travel guides, tips and itineraries from WanderWise. USA and Europe travel writing.">
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/blog.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <style>
+    /* SEARCH BAR */
+    .search-wrap {
+      position: relative;
+      display: flex; align-items: center;
+      flex: 1; max-width: 320px;
+    }
+    .search-icon {
+      position: absolute; left: 0.85rem;
+      color: var(--warm-grey); pointer-events: none;
+      width: 15px; height: 15px;
+    }
+    .search-input {
+      width: 100%;
+      padding: 0.5rem 2.5rem 0.5rem 2.4rem;
+      border: 1px solid var(--border);
+      background: var(--white);
+      font-family: var(--sans); font-size: 0.85rem;
+      color: var(--ink); outline: none;
+      transition: border-color 0.2s;
+    }
+    .search-input:focus { border-color: var(--sienna); }
+    .search-input::placeholder { color: var(--warm-grey); }
+    .search-clear {
+      position: absolute; right: 0.7rem;
+      background: none; border: none; cursor: pointer;
+      color: var(--warm-grey); font-size: 0.8rem;
+      display: none; align-items: center; justify-content: center;
+      padding: 2px; transition: color 0.2s;
+    }
+    .search-clear:hover { color: var(--ink); }
+    .filter-inner {
+      display: flex; align-items: center;
+      gap: 1.2rem; flex-wrap: wrap;
+    }
+    @media (max-width: 600px) {
+      .search-wrap { max-width: 100%; flex: unset; width: 100%; }
+      .filter-inner { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="site-nav">
+    <a href="../index.html" class="nav-logo">Wander<span>Wise</span></a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="usa.html">USA</a></li>
+      <li><a href="europe.html">Europe</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <button class="nav-burger" id="nav-burger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="nav-drawer" id="nav-drawer">
+    <a href="../index.html">Home</a>
+    <a href="usa.html">USA Travel</a>
+    <a href="europe.html">Europe Travel</a>
+    <a href="blog.html">Blog</a>
+    <a href="about.html">About</a>
+  </div>
+
+  <main>
+    <section class="blog-header">
+      <div class="container">
+        <p class="section-label">All posts</p>
+        <h1>The Journal</h1>
+        <p class="blog-header-sub">Every guide, tip and dispatch - in one place.</p>
+      </div>
+    </section>
+
+    <section class="filter-bar">
+      <div class="container">
+        <div class="filter-inner">
+          <!-- Search -->
+          <div class="search-wrap">
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" id="search-input" class="search-input" placeholder="Search posts…" oninput="handleSearch(this.value)" aria-label="Search posts">
+            <button class="search-clear" id="search-clear" onclick="clearSearch()" aria-label="Clear search">✕</button>
+          </div>
+          <!-- Category pills -->
+          <div class="filter-pills">
+            <button class="filter-pill active" data-cat="all">All posts</button>
+            <button class="filter-pill" data-cat="usa">USA Travel</button>
+            <button class="filter-pill" data-cat="europe">Europe Travel</button>
+            <button class="filter-pill" data-cat="general">Travel Tips</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="blog-posts-section">
+      <div class="container">
+        <div class="blog-posts-grid" id="blog-posts">
+          <p style="font-family:var(--sans);color:var(--warm-grey);font-size:0.9rem;grid-column:1/-1;">Loading posts…</p>
+        </div>
+        <div id="no-posts" class="no-posts" style="display:none;">
+          <p id="no-posts-msg">No posts in this category yet.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="../index.html" class="nav-logo">Wander<span>Wise</span></a>
+        <p>Honest travel writing for people who'd rather explore than scroll.</p>
+      </div>
+      <div class="footer-col"><h4>Destinations</h4><a href="usa.html">USA Travel</a><a href="europe.html">Europe Travel</a><a href="blog.html">All Guides</a></div>
+      <div class="footer-col"><h4>Site</h4><a href="about.html">About</a><a href="blog.html">Blog</a><a href="about.html#contact">Contact</a></div>
+      <div class="footer-col"><h4>Follow</h4><a href="#">Instagram</a><a href="#">Pinterest</a><a href="#">Twitter/X</a></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 WanderWise.</span><span>Ebocodes.</span></div>
+  </footer>
+
+  <script type="module">
+    import '../js/global.js';
+
+    let allPosts  = [];
+    let activeCat = 'all';
+    let searchVal = '';
+
+    async function init() {
+      await WW.seedIfEmpty();
+      allPosts = await WW.getPosts();
+      render();
+    }
+
+    function render() {
+      const grid   = document.getElementById('blog-posts');
+      const noPost = document.getElementById('no-posts');
+      const noMsg  = document.getElementById('no-posts-msg');
+
+      let posts = activeCat === 'all' ? allPosts : allPosts.filter(p => p.category === activeCat);
+
+      if (searchVal.trim()) {
+        const q = searchVal.toLowerCase();
+        posts = posts.filter(p =>
+          p.title.toLowerCase().includes(q) ||
+          (p.excerpt || '').toLowerCase().includes(q) ||
+          (p.content || '').toLowerCase().includes(q)
+        );
+      }
+
+      if (!posts.length) {
+        grid.innerHTML = '';
+        noMsg.textContent = searchVal.trim() ? 'No posts match your search.' : 'No posts in this category yet.';
+        noPost.style.display = 'block';
+        return;
+      }
+      noPost.style.display = 'none';
+      grid.innerHTML = posts.map(p => `<div>${WW.renderCard(p)}</div>`).join('');
+    }
+
+    document.querySelectorAll('.filter-pill').forEach(btn => {
+      btn.addEventListener('click', function () {
+        document.querySelectorAll('.filter-pill').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        activeCat = this.dataset.cat;
+        render();
+      });
+    });
+
+    window.handleSearch = (val) => {
+      searchVal = val;
+      document.getElementById('search-clear').style.display = val ? 'flex' : 'none';
+      render();
+    };
+
+    window.clearSearch = () => {
+      searchVal = '';
+      document.getElementById('search-input').value = '';
+      document.getElementById('search-clear').style.display = 'none';
+      render();
+    };
+
+    init();
+  </script>
+</body>
+</html>
