@@ -1,0 +1,92 @@
+/* WanderWise - Editorial Custom Stylesheet */
+
+:root {
+    --color-bg-light: #FDFBF7;
+    --color-card-bg: #FFFFFF;
+    --color-navy: #0B132B;
+    --color-navy-surface: #1C2541;
+    --color-terracotta: #D97706;
+    --color-terracotta-dark: #B45309;
+    --color-emerald: #059669;
+    --color-text-dark: #1E293B;
+    --color-text-muted: #64748B;
+    --color-border: #E2E8F0;
+}
+
+body {
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--color-bg-light);
+    color: var(--color-text-dark);
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Glassmorphism Header */
+.glass-header {
+    background: rgba(253, 251, 247, 0.92);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+/* Destination Card Animations */
+.dest-card {
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease;
+}
+
+.dest-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px -10px rgba(11, 19, 43, 0.12);
+    border-color: var(--color-terracotta);
+}
+
+.dest-card-img-wrap {
+    overflow: hidden;
+    position: relative;
+}
+
+.dest-card-img-wrap img {
+    transition: transform 0.5s ease;
+}
+
+.dest-card:hover .dest-card-img-wrap img {
+    transform: scale(1.05);
+}
+
+/* Region Filter Tabs */
+.region-tab.active {
+    background-color: var(--color-navy);
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(11, 19, 43, 0.25);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: var(--color-bg-light);
+}
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* Timeline Graphic Styling */
+.timeline-dot {
+    position: relative;
+}
+.timeline-dot::before {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: -21px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--color-terracotta);
+    box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.2);
+}
